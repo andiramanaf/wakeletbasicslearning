@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#146c5a">
+<title>Wakelet untuk Guru | Mini App Pembelajaran</title>
+<style>
+:root{--green:#146c5a;--green2:#1e8a70;--mint:#e9f7f1;--ink:#17332e;--muted:#62736e;--paper:#f5f8f6;--line:#dce8e2;--white:#fff;--gold:#f4c96b;--red:#b33a3a;--shadow:0 10px 28px rgba(20,70,55,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.app{max-width:1180px;margin:auto;padding:0 18px 42px}.hero{margin:18px auto 22px;background:linear-gradient(125deg,#103e36,#146c5a 58%,#2b9c7c);color:white;border-radius:24px;padding:clamp(24px,5vw,54px);position:relative;overflow:hidden;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:300px;height:300px;border:45px solid rgba(255,255,255,.08);border-radius:50%;right:-75px;top:-90px}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#b8ead7}.hero h1{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.08;margin:12px 0;max-width:760px}.hero p{max-width:760px;color:#e3f5ed;margin-bottom:22px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:750;background:var(--green);color:#fff}.btn.light{background:white;color:var(--green)}.btn.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}.btn.gold{background:var(--gold);color:#3d3213}.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:22px;align-items:start}.sidebar{position:sticky;top:14px;background:white;border:1px solid var(--line);border-radius:18px;padding:15px;box-shadow:var(--shadow)}.sidebar h2{font-size:1rem;margin:4px 8px 12px}.nav{display:grid;gap:5px}.nav button{text-align:left;border:0;background:transparent;color:var(--ink);padding:10px 11px;border-radius:10px;display:flex;gap:10px;align-items:center}.nav button:hover,.nav button.active{background:var(--mint);color:var(--green);font-weight:800}.nav .num{width:27px;height:27px;border-radius:8px;background:#eef3f0;display:grid;place-items:center;font-size:.8rem;flex-shrink:0}.nav button.active .num{background:var(--green);color:white}.progress-wrap{padding:14px 8px 5px}.progress-meta{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted)}.progress{height:8px;background:#e7eeea;border-radius:20px;overflow:hidden;margin-top:7px}.progress div{height:100%;width:0;background:var(--green2);transition:width .25s}.content{min-width:0}.panel{display:none;background:white;border:1px solid var(--line);border-radius:20px;padding:clamp(18px,3vw,32px);box-shadow:var(--shadow);margin-bottom:18px}.panel.active{display:block;animation:fade .25s ease}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}.kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--green2)}h2{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;margin:8px 0 14px}h3{margin:20px 0 8px;font-size:1.13rem}p{margin:8px 0 14px}.lead{font-size:1.08rem;color:#405b53}.callout{border-left:4px solid var(--green2);background:var(--mint);padding:14px 16px;border-radius:0 12px 12px 0;margin:16px 0}.grid2,.grid3{display:grid;gap:13px;margin:16px 0}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.card{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fff}.card .icon{font-size:1.6rem}.card h3{margin:6px 0}.card p{font-size:.94rem;color:var(--muted);margin-bottom:0}.tag{display:inline-block;background:var(--mint);color:var(--green);font-size:.76rem;font-weight:800;border-radius:30px;padding:4px 9px}.steps{counter-reset:step;list-style:none;padding:0;display:grid;gap:12px}.steps li{counter-increment:step;display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start}.steps li:before{content:counter(step);display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:var(--mint);color:var(--green);font-weight:900}.steps strong{display:block}.muted{color:var(--muted)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;margin:14px 0}table{border-collapse:collapse;width:100%;min-width:540px}th,td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#eff7f3;color:var(--green);font-size:.9rem}tr:last-child td{border-bottom:0}.checklist{display:grid;gap:10px;margin:15px 0}.checkline{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:11px}.checkline input{margin-top:5px;accent-color:var(--green);width:18px;height:18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:5px;margin:10px 0}.field label{font-weight:750;font-size:.9rem}.field input,.field textarea,.field select{width:100%;padding:11px;border:1px solid #cbd9d2;border-radius:10px;background:white;color:var(--ink)}.field textarea{min-height:90px;resize:vertical}.quiz-question{border:1px solid var(--line);padding:16px;border-radius:13px;margin:14px 0}.quiz-question legend{font-weight:800;padding:0 4px}.option{display:flex;gap:9px;align-items:flex-start;padding:8px;border-radius:8px}.option:hover{background:#f4f8f5}.option input{margin-top:6px;accent-color:var(--green)}.feedback{padding:10px;border-radius:9px;margin-top:8px;font-size:.92rem}.correct{background:#e6f7ed;color:#145d37}.incorrect{background:#fff0ed;color:#8c2c25}.result{padding:18px;border-radius:14px;background:var(--mint);margin:14px 0}.result strong{font-size:1.7rem;color:var(--green)}.nav-bottom{display:flex;justify-content:space-between;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}.footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px 8px}.small{font-size:.88rem}.source-link{color:var(--green);font-weight:750;overflow-wrap:anywhere}.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{padding:7px 10px;border:1px solid var(--line);border-radius:30px;font-size:.85rem;background:#fff}.success-note{display:none;background:#e6f7ed;color:#145d37;padding:12px;border-radius:10px;margin-top:12px}.success-note.show{display:block}.hide{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:static}.nav{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.sidebar h2{margin-bottom:8px}}
+@media(max-width:560px){.app{padding:0 10px 28px}.hero{border-radius:17px}.nav{grid-template-columns:1fr 1fr}.nav button{font-size:.82rem;padding:8px}.grid2,.grid3,.form-grid{grid-template-columns:1fr}.panel{border-radius:15px;padding:18px}.nav-bottom .btn{padding:10px 12px}}
+@media print{body{background:#fff}.hero,.sidebar,.nav-bottom,.hero-actions,.btn{display:none!important}.layout{display:block}.panel{display:block!important;box-shadow:none;break-inside:avoid}.app{max-width:none}.content{width:100%}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+  <div class="eyebrow">Mini App Pembelajaran • Pelatihan 10.000 Karya Digital Guru</div>
+  <h1>Wakelet untuk Pembelajaran yang Terarah dan Kolaboratif</h1>
+  <p>Kenali platform, pahami ekosistemnya, rancang pengalaman belajar, buat Collection pertama, dan evaluasi kesiapan implementasi di kelas.</p>
+  <div class="hero-actions">
+    <button class="btn light" onclick="goTo(0)">Mulai belajar →</button>
+    <button class="btn" style="background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35)" onclick="window.print()">Cetak modul</button>
+  </div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <h2>Jalur Pembelajaran</h2>
+  <nav class="nav" id="nav">
+    <button class="active" data-panel="0"><span class="num">1</span> Mengenal Wakelet</button>
+    <button data-panel="1"><span class="num">2</span> Ekosistem Wakelet</button>
+    <button data-panel="2"><span class="num">3</span> Strategi Pembelajaran</button>
+    <button data-panel="3"><span class="num">4</span> Praktik Collection</button>
+    <button data-panel="4"><span class="num">5</span> Integrasi Pendidikan</button>
+    <button data-panel="5"><span class="num">6</span> Evaluasi & Asesmen</button>
+  </nav>
+  <div class="progress-wrap">
+    <div class="progress-meta"><span>Progres modul</span><strong id="progressText">0%</strong></div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <p class="small muted" id="progressHint">Selesaikan bagian dan tandai sebagai tuntas.</p>
+  </div>
+  <button class="btn outline" style="width:100%;margin-top:8px" onclick="resetProgress()">Atur ulang progres</button>
+</aside>
+<main class="content">
+<section class="panel active" id="panel-0">
+  <div class="kicker">Bagian 1 • Fondasi</div><h2>Mengenal Wakelet</h2>
+  <p class="lead">Wakelet adalah platform kurasi konten digital untuk mengumpulkan, mengorganisasi, dan membagikan sumber dalam koleksi visual yang mudah dijelajahi.</p>
+  <div class="callout"><strong>Gagasan kunci:</strong> bukan sekadar mengumpulkan tautan, tetapi menyusun sumber menjadi perjalanan belajar yang jelas dan berdampak.</div>
+  <div class="grid3">
+    <article class="card"><div class="icon">🗂️</div><h3>Kurasi</h3><p>Menghimpun sumber relevan seperti artikel, video, gambar, catatan, dan tautan.</p></article>
+    <article class="card"><div class="icon">🧭</div><h3>Organisasi</h3><p>Mengelompokkan sumber berdasarkan topik, tujuan, kelas, atau urutan aktivitas.</p></article>
+    <article class="card"><div class="icon">🔗</div><h3>Berbagi</h3><p>Menyediakan satu pintu akses ke bahan ajar dengan pengaturan izin yang sesuai.</p></article>
+  </div>
+  <h3>Bagaimana Wakelet mendukung guru?</h3>
+  <ul>
+    <li>Menyusun pusat sumber belajar untuk satu topik atau unit.</li>
+    <li>Membagikan materi sebelum, selama, dan setelah pembelajaran.</li>
+    <li>Mendukung pengumpulan ide dan sumber secara kolaboratif.</li>
+    <li>Mendokumentasikan karya dan refleksi dalam portofolio digital.</li>
+  </ul>
+  <h3>Wakelet bukan pengganti semua sistem pendidikan</h3>
+  <p>Wakelet mendukung kurasi dan berbagi konten. Platform ini tidak otomatis menjamin kualitas sumber, menilai seluruh kompetensi peserta didik, atau menggantikan sistem manajemen pembelajaran sekolah. Guru tetap merancang tujuan, instruksi, pendampingan, dan asesmen.</p>
+  <h3>Icebreaking: “Link Bertebaran, Belajar Berantakan?”</h3>
+  <ol class="steps">
+    <li><div><strong>Pemantik</strong>Siapa pernah membagikan materi di grup, lalu peserta didik bertanya lagi, “Bu/Pak, tautannya yang mana?”</div></li>
+    <li><div><strong>Berbagi pengalaman</strong>Sebutkan satu tantangan: tautan tercecer, file sulit ditemukan, atau urutan belajar tidak jelas.</div></li>
+    <li><div><strong>Tantangan tiga sumber</strong>Pilih satu topik, lalu identifikasi video, bacaan, dan gambar/infografis yang cocok.</div></li>
+    <li><div><strong>Debrief</strong>Diskusikan bagaimana sumber tersebut disusun dalam satu alur belajar.</div></li>
+  </ol>
+  <div class="callout">“Hari ini kita tidak sekadar belajar mengumpulkan tautan. Kita belajar mengubah sumber digital yang tersebar menjadi pengalaman belajar yang terarah dan bermakna.”</div>
+  <label class="checkline"><input type="checkbox" class="complete" data-id="0"> <span><strong>Saya memahami fondasi Wakelet</strong><br><span class="muted small">Saya dapat menjelaskan fungsi utama Wakelet dan batas penggunaannya.</span></span></label>
+  <div class="nav-bottom"><span></span><button class="btn" onclick="goTo(1)">Lanjut: Ekosistem →</button></div>
+</section>
+
+<section class="panel" id="panel-1">
+  <div class="kicker">Bagian 2 • Komponen dan hubungan</div><h2>Memahami Ekosistem Wakelet</h2>
+  <p class="lead">Ekosistem Wakelet dapat dipahami sebagai hubungan antara sumber digital, Items, Collections, pengguna, kolaborasi, pengaturan akses, dan hasil pembelajaran.</p>
+  <div class="grid2">
+    <article class="card"><span class="tag">01 • Sumber</span><h3>Konten digital</h3><p>Artikel, video, gambar, dokumen, catatan, dan tautan web yang relevan.</p></article>
+    <article class="card"><span class="tag">02 • Unit konten</span><h3>Items</h3><p>Konten individual yang ditambahkan ke dalam koleksi.</p></article>
+    <article class="card"><span class="tag">03 • Pengorganisasian</span><h3>Collections</h3><p>Kumpulan item yang dikurasi untuk tema atau tujuan tertentu.</p></article>
+    <article class="card"><span class="tag">04 • Lingkungan kerja</span><h3>Ruang dan kelas</h3><p>Lingkungan pengelolaan atau kolaborasi sesuai fitur, akun, dan konfigurasi yang tersedia.</p></article>
+    <article class="card"><span class="tag">05 • Pengguna</span><h3>Kurator dan kontributor</h3><p>Guru dapat mengelola koleksi; peserta didik atau rekan kerja berkontribusi sesuai izin.</p></article>
+    <article class="card"><span class="tag">06 • Akses</span><h3>Berbagi dan izin</h3><p>Pengaturan untuk menentukan siapa yang dapat melihat, menambahkan, atau mengedit konten.</p></article>
+  </div>
+  <h3>Alur ekosistem</h3>
+  <div class="callout"><strong>Sumber digital → Items → Collection → Kolaborasi dan berbagi → Aktivitas belajar → Hasil dan refleksi.</strong><br>Ini adalah model konseptual untuk membantu guru merancang pembelajaran, bukan diagram arsitektur teknis resmi Wakelet.</div>
+  <h3>Contoh: Perubahan Iklim</h3>
+  <ol class="steps">
+    <li><div><strong>Kurasi</strong>Guru memilih video, artikel, infografis, dan data dari sumber tepercaya.</div></li>
+    <li><div><strong>Susun Collection</strong>Tambahkan tujuan, instruksi, dan urutan sumber: pengantar, eksplorasi, analisis, praktik.</div></li>
+    <li><div><strong>Kolaborasi</strong>Kelompok menambahkan sumber atau gagasan sesuai izin yang diberikan.</div></li>
+    <li><div><strong>Hasil dan refleksi</strong>Peserta didik menyajikan kesimpulan, lalu mendokumentasikan proses dan hasil belajar.</div></li>
+  </ol>
+  <h3>Cek pemahaman cepat</h3>
+  <div class="quiz-question"><legend>Mana pernyataan yang paling tepat tentang Collection?</legend>
+    <label class="option"><input type="radio" name="ecosystem" value="a"> Koleksi sumber yang diorganisasi untuk tema atau tujuan tertentu.</label>
+    <label class="option"><input type="radio" name="ecosystem" value="b"> Aplikasi konferensi video.</label>
+    <label class="option"><input type="radio" name="ecosystem" value="c"> Sistem yang otomatis menilai semua tugas.</label>
+    <div id="ecoFeedback" class="feedback hide"></div>
+    <button class="btn outline" onclick="checkEco()">Periksa jawaban</button>
+  </div>
+  <label class="checkline"><input type="checkbox" class="complete" data-id="1"> <span><strong>Saya memahami ekosistem Wakelet</strong><br><span class="muted small">Saya dapat menjelaskan hubungan antara item, koleksi, pengguna, dan izin akses.</span></span></label>
+  <div class="nav-bottom"><button class="btn outline" onclick="goTo(0)">← Sebelumnya</button><button class="btn" onclick="goTo(2)">Lanjut: Strategi →</button></div>
+</section>
+
+<section class="panel" id="panel-2">
+  <div class="kicker">Bagian 3 • Desain pembelajaran</div><h2>Strategi Pemanfaatan Wakelet dalam Pembelajaran</h2>
+  <p class="lead">Mulailah dari tujuan belajar dan kebutuhan peserta didik. Pilih fitur dan sumber yang mendukung tujuan tersebut, bukan sebaliknya.</p>
+  <h3>Sebelum, selama, dan setelah pembelajaran</h3>
+  <div class="table-wrap"><table><thead><tr><th>Tahap</th><th>Peran guru</th><th>Contoh penggunaan</th></tr></thead><tbody>
+    <tr><td><strong>Sebelum</strong></td><td>Menyiapkan sumber dan instruksi</td><td>Video pengantar, bacaan, pertanyaan pemantik, materi prapembelajaran.</td></tr>
+    <tr><td><strong>Selama</strong></td><td>Memandu eksplorasi dan diskusi</td><td>Koleksi sumber kelompok, referensi studi kasus, dokumentasi gagasan.</td></tr>
+    <tr><td><strong>Setelah</strong></td><td>Menguatkan pemahaman dan refleksi</td><td>Hasil proyek, refleksi individu, bacaan tambahan, portofolio.</td></tr>
+  </tbody></table></div>
+  <h3>Delapan ide penerapan</h3>
+  <div class="grid2">
+    <article class="card"><div class="icon">📚</div><h3>Lesson Resource Hub</h3><p>Pusat materi satu bab yang berisi video, artikel, slide, dan latihan.</p></article>
+    <article class="card"><div class="icon">🔎</div><h3>Research Collection</h3><p>Kumpulan referensi untuk proyek penelitian dengan pemeriksaan kredibilitas.</p></article>
+    <article class="card"><div class="icon">🧑‍🎓</div><h3>Portofolio digital</h3><p>Karya, revisi, umpan balik, dan refleksi dari waktu ke waktu.</p></article>
+    <article class="card"><div class="icon">🤝</div><h3>Bank sumber guru</h3><p>Berbagi strategi mengajar, bahan ajar, dan contoh asesmen antarguru.</p></article>
+    <article class="card"><div class="icon">📖</div><h3>Reading List</h3><p>Daftar bacaan menurut tema, minat, atau tingkat kemampuan.</p></article>
+    <article class="card"><div class="icon">🧩</div><h3>Proyek kolaboratif</h3><p>Mengumpulkan ide, sumber, data, dan hasil kerja kelompok.</p></article>
+    <article class="card"><div class="icon">📣</div><h3>Pusat informasi kelas</h3><p>Pengumuman, jadwal, sumber, dan karya kelas sesuai audiens.</p></article>
+    <article class="card"><div class="icon">🌱</div><h3>Pengembangan profesional</h3><p>Materi pelatihan, praktik baik, dan refleksi pengembangan kompetensi.</p></article>
+  </div>
+  <h3>Studi kasus: Teks eksplanasi</h3>
+  <p>Guru Bahasa Indonesia ingin menyatukan video, artikel, contoh teks, pertanyaan analisis, dan tugas menulis. Rancang satu Collection yang membantu siswa bergerak dari eksplorasi ke praktik dan refleksi.</p>
+  <div class="field"><label for="caseProblem">1. Masalah belajar yang ingin Anda selesaikan</label><textarea id="caseProblem" placeholder="Contoh: siswa kesulitan menemukan materi dan memahami urutan tugas..."></textarea></div>
+  <div class="field"><label for="caseActivity">2. Aktivitas belajar yang akan dibuat</label><textarea id="caseActivity" placeholder="Contoh: membandingkan dua sumber lalu menulis teks eksplanasi..."></textarea></div>
+  <div class="field"><label for="caseEvidence">3. Bukti keberhasilan belajar</label><textarea id="caseEvidence" placeholder="Contoh: hasil tulisan, rubrik, atau refleksi siswa..."></textarea></div>
+  <div class="callout"><strong>Prinsip desain:</strong> setiap sumber harus punya fungsi. Tanyakan: “Apa yang akan dilakukan peserta didik dengan sumber ini?”</div>
+  <label class="checkline"><input type="checkbox" class="complete" data-id="2"> <span><strong>Saya telah menentukan strategi</strong><br><span class="muted small">Saya punya satu ide pemanfaatan Wakelet yang sesuai mata pelajaran saya.</span></span></label>
+  <div class="nav-bottom"><button class="btn outline" onclick="goTo(1)">← Sebelumnya</button><button class="btn" onclick="goTo(3)">Lanjut: Praktik →</button></div>
+</section>
+
+<section class="panel" id="panel-3">
+  <div class="kicker">Bagian 4 • Mini project</div><h2>Praktik Membuat Collection Pertama</h2>
+  <p class="lead">Buat rancangan koleksi pembelajaran yang bisa diuji coba. Gunakan generator rencana berikut untuk menyiapkan struktur sebelum membangunnya di Wakelet.</p>
+  <div class="callout"><strong>Target praktik:</strong> satu Collection dengan judul, tujuan, minimal lima item relevan, instruksi, aktivitas, dan refleksi.</div>
+  <h3>Rancang koleksi Anda</h3>
+  <div class="form-grid">
+    <div class="field"><label for="collectionTitle">Judul Collection</label><input id="collectionTitle" placeholder="Contoh: Literasi Digital — Kelas VIII"></div>
+    <div class="field"><label for="subject">Mata pelajaran / bidang</label><input id="subject" placeholder="Contoh: Bahasa Indonesia"></div>
+  </div>
+  <div class="field"><label for="learningGoal">Tujuan pembelajaran</label><textarea id="learningGoal" placeholder="Setelah kegiatan, peserta didik mampu..."></textarea></div>
+  <div class="field"><label for="itemsList">Rencana minimal lima item</label><textarea id="itemsList" placeholder="1. Video pengantar&#10;2. Artikel tepercaya&#10;3. Infografis&#10;4. Contoh atau studi kasus&#10;5. Lembar kerja / refleksi"></textarea></div>
+  <div class="field"><label for="studentTask">Instruksi dan aktivitas peserta didik</label><textarea id="studentTask" placeholder="Jelaskan apa yang perlu dilakukan, urutannya, dan hasil yang harus dikumpulkan."></textarea></div>
+  <div class="field"><label for="accessPlan">Rencana akses dan privasi</label><select id="accessPlan"><option value="">Pilih rencana akses</option><option>Koleksi referensi — akses lihat</option><option>Koleksi kolaborasi — kontribusi sesuai izin</option><option>Portofolio terbatas — akses sesuai kebijakan sekolah</option></select></div>
+  <div class="hero-actions" style="margin-top:12px">
+    <button class="btn" onclick="generatePlan()">Buat ringkasan rencana</button>
+    <button class="btn outline" onclick="downloadPlan()">Unduh rencana (.txt)</button>
+  </div>
+  <div id="planOutput" class="result hide"></div>
+  <h3>Checklist sebelum membagikan</h3>
+  <div class="checklist" id="practiceChecks">
+    <label class="checkline"><input type="checkbox"><span>Tujuan pembelajaran spesifik dan jelas.</span></label>
+    <label class="checkline"><input type="checkbox"><span>Minimal lima item relevan telah disiapkan.</span></label>
+    <label class="checkline"><input type="checkbox"><span>Sumber diperiksa kredibilitas dan hak penggunaannya.</span></label>
+    <label class="checkline"><input type="checkbox"><span>Urutan sumber dan instruksi mudah dipahami.</span></label>
+    <label class="checkline"><input type="checkbox"><span>Aktivitas menghasilkan bukti belajar atau refleksi.</span></label>
+    <label class="checkline"><input type="checkbox"><span>Izin akses dan privasi telah ditinjau.</span></label>
+    <label class="checkline"><input type="checkbox"><span>Koleksi diuji dari sudut pandang peserta didik.</span></label>
+  </div>
+  <h3>Langkah praktik di Wakelet</h3>
+  <ol class="steps">
+    <li><div><strong>Buka Wakelet</strong>Kunjungi <a class="source-link" href="https://wakelet.com/" target="_blank" rel="noopener">wakelet.com</a>, lalu masuk atau buat akun sesuai opsi yang tersedia.</div></li>
+    <li><div><strong>Buat Collection</strong>Pilih opsi membuat koleksi, tulis judul yang spesifik, dan tambahkan deskripsi.</div></li>
+    <li><div><strong>Tambahkan Items</strong>Masukkan sumber yang didukung, misalnya tautan, teks, gambar, video, atau dokumen.</div></li>
+    <li><div><strong>Atur urutan dan tampilan</strong>Susun alur pengantar, eksplorasi, analisis, praktik, dan refleksi.</div></li>
+    <li><div><strong>Tinjau izin dan bagikan</strong>Gunakan opsi akses yang tersedia pada akun. Uji tautan dan akses sebelum digunakan di kelas.</div></li>
+  </ol>
+  <label class="checkline"><input type="checkbox" class="complete" data-id="3"> <span><strong>Saya telah menyusun rencana Collection</strong><br><span class="muted small">Rencana saya siap dibangun atau diuji di Wakelet.</span></span></label>
+  <div class="nav-bottom"><button class="btn outline" onclick="goTo(2)">← Sebelumnya</button><button class="btn" onclick="goTo(4)">Lanjut: Integrasi →</button></div>
+</section>
+
+<section class="panel" id="panel-4">
+  <div class="kicker">Bagian 5 • Ekosistem pendidikan</div><h2>Integrasi dengan Ekosistem Pendidikan</h2>
+  <p class="lead">Wakelet dapat menjadi penghubung ke sumber dan alat lain. Integrasi sebaiknya dipilih berdasarkan kebutuhan pembelajaran dan akses nyata peserta didik.</p>
+  <div class="grid2">
+    <article class="card"><div class="icon">▶️</div><h3>Video</h3><p>Gunakan video sebagai pemantik, demonstrasi, atau sumber analisis. Periksa ketersediaan teks pendukung dan akses.</p></article>
+    <article class="card"><div class="icon">☁️</div><h3>Penyimpanan cloud</h3><p>Rujuk dokumen atau bahan ajar dari layanan penyimpanan yang didukung dan pastikan izin file sesuai.</p></article>
+    <article class="card"><div class="icon">🎨</div><h3>Konten visual</h3><p>Gunakan poster, infografis, atau materi visual sebagai bahan eksplorasi dan komunikasi gagasan.</p></article>
+    <article class="card"><div class="icon">♿</div><h3>Aksesibilitas</h3><p>Periksa fitur pendukung seperti Immersive Reader bila tersedia, dan sediakan alternatif untuk sumber yang sulit diakses.</p></article>
+  </div>
+  <h3>Contoh layanan dan integrasi</h3>
+  <p>Dokumentasi Wakelet menyebut layanan dan sumber seperti YouTube, Google Drive, Microsoft OneDrive, Canva, serta sejumlah alat lain dalam konteks tertentu. Opsi yang tersedia dapat berbeda menurut fitur, akun, dan konfigurasi Classroom. Jangan mengasumsikan semua integrasi aktif pada setiap akun.</p>
+  <div class="pill-row"><span class="pill">YouTube</span><span class="pill">Google Drive</span><span class="pill">Microsoft OneDrive</span><span class="pill">Canva</span><span class="pill">Immersive Reader</span><span class="pill">AI / Wakelet Create*</span></div>
+  <p class="small muted">*Fitur AI dan fitur lanjutan dapat bergantung pada paket atau status peluncuran. Periksa dokumentasi resmi sebelum pelatihan.</p>
+  <h3>Prinsip integrasi yang baik</h3>
+  <ol class="steps">
+    <li><div><strong>Mulai dari tujuan</strong>Pilih alat yang membantu peserta mencapai capaian pembelajaran.</div></li>
+    <li><div><strong>Kurangi hambatan akses</strong>Uji tautan, izin dokumen, kebutuhan login, dan kompatibilitas perangkat.</div></li>
+    <li><div><strong>Jaga privasi</strong>Jangan membagikan data pribadi peserta didik tanpa dasar dan otorisasi yang sesuai.</div></li>
+    <li><div><strong>Periksa kualitas</strong>Pastikan sumber akurat, relevan, dan digunakan sesuai hak cipta.</div></li>
+    <li><div><strong>Tinjau aksesibilitas</strong>Gunakan instruksi jelas, teks alternatif bila sesuai, dan sumber alternatif jika diperlukan.</div></li>
+  </ol>
+  <div class="callout"><strong>AI sebagai pendukung:</strong> jika fitur AI tersedia, gunakan hasilnya sebagai draf. Guru tetap harus memeriksa akurasi, tingkat kesulitan, bias, dan kesesuaian pedagogis. Jangan masukkan informasi sensitif peserta didik ke alat AI tanpa perlindungan yang tepat.</div>
+  <h3>Rencana integrasi saya</h3>
+  <div class="field"><label for="integrationTool">Alat atau sumber yang akan diintegrasikan</label><input id="integrationTool" placeholder="Contoh: video YouTube dan PDF di Drive"></div>
+  <div class="field"><label for="integrationPurpose">Tujuan penggunaannya</label><textarea id="integrationPurpose" placeholder="Alat ini mendukung peserta didik untuk..."></textarea></div>
+  <label class="checkline"><input type="checkbox" class="complete" data-id="4"> <span><strong>Saya telah merancang integrasi yang relevan</strong><br><span class="muted small">Saya akan menguji akses, privasi, dan kesesuaian sumber sebelum membagikan.</span></span></label>
+  <div class="nav-bottom"><button class="btn outline" onclick="goTo(3)">← Sebelumnya</button><button class="btn" onclick="goTo(5)">Lanjut: Evaluasi →</button></div>
+</section>
+
+<section class="panel" id="panel-5">
+  <div class="kicker">Bagian 6 • Evaluasi dan tindak lanjut</div><h2>Evaluasi dan Asesmen Pelatihan</h2>
+  <p class="lead">Evaluasi mengukur pemahaman konsep sekaligus kemampuan menerapkan Wakelet dalam rancangan pembelajaran yang nyata.</p>
+  <h3>Rubrik penilaian Collection</h3>
+  <p class="muted small">Beri skor 1–4 pada setiap kriteria. Rubrik ini adalah rekomendasi pelatihan, bukan standar penilaian resmi Wakelet.</p>
+  <div class="table-wrap"><table><thead><tr><th>Kriteria</th><th>1 — Perlu bimbingan</th><th>2 — Berkembang</th><th>3 — Baik</th><th>4 — Sangat baik</th></tr></thead><tbody>
+    <tr><td>Tujuan</td><td>Tidak jelas</td><td>Masih umum</td><td>Jelas</td><td>Spesifik dan terukur</td></tr>
+    <tr><td>Kualitas konten</td><td>Tidak relevan</td><td>Sebagian sesuai</td><td>Relevan</td><td>Kredibel dan beragam</td></tr>
+    <tr><td>Organisasi</td><td>Tidak terstruktur</td><td>Alur membingungkan</td><td>Alur cukup jelas</td><td>Logis dan intuitif</td></tr>
+    <tr><td>Aktivitas</td><td>Tidak ada</td><td>Pasif</td><td>Ada aktivitas berpikir</td><td>Analisis, kreasi, atau refleksi</td></tr>
+    <tr><td>Privasi & akses</td><td>Belum diperiksa</td><td>Diperiksa sebagian</td><td>Memadai</td><td>Matang dan aksesibel</td></tr>
+  </tbody></table></div>
+  <div class="field"><label for="rubric1">Tujuan pembelajaran (1–4)</label><select class="rubric" id="rubric1"><option value="0">Pilih skor</option><option value="1">1 — Perlu bimbingan</option><option value="2">2 — Berkembang</option><option value="3">3 — Baik</option><option value="4">4 — Sangat baik</option></select></div>
+  <div class="field"><label for="rubric2">Kualitas konten (1–4)</label><select class="rubric" id="rubric2"><option value="0">Pilih skor</option><option value="1">1 — Perlu bimbingan</option><option value="2">2 — Berkembang</option><option value="3">3 — Baik</option><option value="4">4 — Sangat baik</option></select></div>
+  <div class="field"><label for="rubric3">Organisasi koleksi (1–4)</label><select class="rubric" id="rubric3"><option value="0">Pilih skor</option><option value="1">1 — Perlu bimbingan</option><option value="2">2 — Berkembang</option><option value="3">3 — Baik</option><option value="4">4 — Sangat baik</option></select></div>
+  <div class="field"><label for="rubric4">Desain aktivitas (1–4)</label><select class="rubric" id="rubric4"><option value="0">Pilih skor</option><option value="1">1 — Perlu bimbingan</option><option value="2">2 — Berkembang</option><option value="3">3 — Baik</option><option value="4">4 — Sangat baik</option></select></div>
+  <div class="field"><label for="rubric5">Privasi dan aksesibilitas (1–4)</label><select class="rubric" id="rubric5"><option value="0">Pilih skor</option><option value="1">1 — Perlu bimbingan</option><option value="2">2 — Berkembang</option><option value="3">3 — Baik</option><option value="4">4 — Sangat baik</option></select></div>
+  <button class="btn" onclick="calculateRubric()">Hitung skor rubrik</button><div id="rubricResult" class="result hide"></div>
+  <h3>Kuis akhir</h3>
+  <p>Jawab semua pertanyaan lalu periksa hasil untuk mengetahui bagian yang perlu dipelajari kembali.</p>
+  <form id="quizForm">
+    <fieldset class="quiz-question"><legend>1. Apa fungsi utama Wakelet?</legend>
+      <label class="option"><input type="radio" name="q1" value="a"> Menggantikan seluruh aktivitas mengajar.</label>
+      <label class="option"><input type="radio" name="q1" value="b"> Mengkurasi, mengorganisasi, dan membagikan konten digital.</label>
+      <label class="option"><input type="radio" name="q1" value="c"> Menilai semua kompetensi secara otomatis.</label><div class="feedback hide" id="f1"></div>
+    </fieldset>
+    <fieldset class="quiz-question"><legend>2. Apa itu Collection?</legend>
+      <label class="option"><input type="radio" name="q2" value="a"> Kumpulan sumber yang disusun untuk tema atau tujuan tertentu.</label>
+      <label class="option"><input type="radio" name="q2" value="b"> Aplikasi konferensi video.</label>
+      <label class="option"><input type="radio" name="q2" value="c"> Sistem operasi sekolah.</label><div class="feedback hide" id="f2"></div>
+    </fieldset>
+    <fieldset class="quiz-question"><legend>3. Apa langkah tepat untuk koleksi referensi yang hanya perlu dibaca?</legend>
+      <label class="option"><input type="radio" name="q3" value="a"> Memberi semua orang izin edit.</label>
+      <label class="option"><input type="radio" name="q3" value="b"> Tidak perlu memeriksa izin.</label>
+      <label class="option"><input type="radio" name="q3" value="c"> Gunakan opsi akses lihat jika tersedia.</label><div class="feedback hide" id="f3"></div>
+    </fieldset>
+    <fieldset class="quiz-question"><legend>4. Siapa yang bertanggung jawab memeriksa kualitas sumber belajar?</legend>
+      <label class="option"><input type="radio" name="q4" value="a"> AI saja.</label>
+      <label class="option"><input type="radio" name="q4" value="b"> Guru tetap perlu memeriksa sumber dan isi.</label>
+      <label class="option"><input type="radio" name="q4" value="c"> Platform saja.</label><div class="feedback hide" id="f4"></div>
+    </fieldset>
+    <fieldset class="quiz-question"><legend>5. Apa praktik terbaik untuk portofolio peserta didik?</legend>
+      <label class="option"><input type="radio" name="q5" value="a"> Mengumpulkan karya tanpa tujuan.</label>
+      <label class="option"><input type="radio" name="q5" value="b"> Membagikan seluruh data ke publik.</label>
+      <label class="option"><input type="radio" name="q5" value="c"> Mendokumentasikan karya, proses, dan refleksi dengan menjaga privasi.</label><div class="feedback hide" id="f5"></div>
+    </fieldset>
+    <button class="btn" type="button" onclick="gradeQuiz()">Periksa jawaban</button>
+    <button class="btn outline" type="button" onclick="resetQuiz()">Ulangi kuis</button>
+  </form>
+  <div id="quizResult" class="result hide"></div>
+  <h3>Refleksi dan komitmen tujuh hari</h3>
+  <div class="field"><label for="reflectionBefore">Sebelum pelatihan, tantangan saya adalah…</label><textarea id="reflectionBefore" placeholder="Tuliskan refleksi..."></textarea></div>
+  <div class="field"><label for="reflectionAfter">Setelah pelatihan, hal yang ingin saya coba adalah…</label><textarea id="reflectionAfter" placeholder="Tuliskan ide..."></textarea></div>
+  <div class="field"><label for="commitment">Dalam tujuh hari ke depan, saya akan…</label><textarea id="commitment" placeholder="Contoh: membuat satu Collection dan mengujinya pada satu kelas..."></textarea></div>
+  <button class="btn" onclick="downloadReflection()">Unduh refleksi (.txt)</button>
+  <label class="checkline" style="margin-top:16px"><input type="checkbox" class="complete" data-id="5"> <span><strong>Saya telah menyelesaikan evaluasi</strong><br><span class="muted small">Saya sudah mengerjakan kuis, menilai rancangan, dan menetapkan tindak lanjut.</span></span></label>
+  <div class="nav-bottom"><button class="btn outline" onclick="goTo(4)">← Sebelumnya</button><button class="btn" onclick="finishCourse()">Selesaikan modul ✓</button></div>
+  <div id="finishMessage" class="success-note">Selamat! Anda telah menandai modul sebagai selesai. Lanjutkan dengan menguji Collection dalam pembelajaran nyata.</div>
+</section>
+</main>
+</div>
+<footer class="footer">Mini App Pelatihan Guru • Wakelet untuk Pembelajaran yang Terarah dan Kolaboratif<br>Materi pendamping belajar. Periksa situs dan dokumentasi resmi Wakelet untuk pembaruan fitur, paket, dan antarmuka.</footer>
+</div>
+<script>
+const panels=[...document.querySelectorAll('.panel')], navButtons=[...document.querySelectorAll('.nav button')];
+function goTo(i){if(i<0||i>=panels.length)return;panels.forEach((p,j)=>p.classList.toggle('active',i===j));navButtons.forEach((b,j)=>b.classList.toggle('active',i===j));window.scrollTo({top:0,behavior:'smooth'});if(i===5)document.getElementById('finishMessage').classList.remove('show')}
+navButtons.forEach(b=>b.addEventListener('click',()=>goTo(Number(b.dataset.panel))));
+function updateProgress(){const checks=[...document.querySelectorAll('.complete')],done=checks.filter(c=>c.checked).length,pct=Math.round(done/checks.length*100);document.getElementById('progressText').textContent=pct+'%';document.getElementById('progressBar').style.width=pct+'%';document.getElementById('progressHint').textContent=done+' dari '+checks.length+' bagian ditandai tuntas.'}
+document.querySelectorAll('.complete').forEach(c=>c.addEventListener('change',updateProgress));
+function resetProgress(){if(!confirm('Atur ulang semua tanda penyelesaian modul?'))return;document.querySelectorAll('.complete').forEach(c=>c.checked=false);updateProgress()}
+function checkEco(){const selected=document.querySelector('input[name="ecosystem"]:checked'),f=document.getElementById('ecoFeedback');f.classList.remove('hide','correct','incorrect');if(!selected){f.textContent='Pilih satu jawaban terlebih dahulu.';f.classList.add('incorrect');return}if(selected.value==='a'){f.textContent='Benar! Collection menghimpun sumber untuk tema atau tujuan tertentu.';f.classList.add('correct')}else{f.textContent='Belum tepat. Collection adalah kumpulan sumber yang disusun untuk tema atau tujuan tertentu.';f.classList.add('incorrect')}}
+function val(id){return (document.getElementById(id)?.value||'').trim()}
+function generatePlan(){const title=val('collectionTitle'),subject=val('subject'),goal=val('learningGoal'),items=val('itemsList'),task=val('studentTask'),access=val('accessPlan');const out=document.getElementById('planOutput');out.classList.remove('hide');out.innerHTML='<h3>Ringkasan rencana Collection</h3><p><strong>Judul:</strong> '+esc(title||'Belum diisi')+'</p><p><strong>Bidang:</strong> '+esc(subject||'Belum diisi')+'</p><p><strong>Tujuan:</strong> '+esc(goal||'Belum diisi')+'</p><p><strong>Rencana item:</strong><br>'+esc(items||'Belum diisi').replace(/\n/g,'<br>')+'</p><p><strong>Aktivitas:</strong><br>'+esc(task||'Belum diisi')+'</p><p><strong>Akses:</strong> '+esc(access||'Belum dipilih')+'</p><p class="small muted">Gunakan ringkasan ini sebagai rencana. Collection tetap perlu dibuat dan diuji di situs Wakelet.</p>';out.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function downloadText(filename,text){const blob=new Blob([text],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
+function downloadPlan(){const text=`RENCANA COLLECTION WAKELET\nJudul: ${val('collectionTitle')}\nMata pelajaran: ${val('subject')}\nTujuan pembelajaran: ${val('learningGoal')}\nRencana item:\n${val('itemsList')}\nInstruksi dan aktivitas:\n${val('studentTask')}\nRencana akses: ${val('accessPlan')}\n`;downloadText('rencana-collection-wakelet.txt',text)}
+function calculateRubric(){const scores=[1,2,3,4,5].map(n=>Number(document.getElementById('rubric'+n).value));const box=document.getElementById('rubricResult');box.classList.remove('hide');if(scores.some(s=>s===0)){box.innerHTML='<strong>Lengkapi semua kriteria</strong><p>Pilih skor 1–4 untuk setiap kriteria agar hasil dapat dihitung.</p>';return}const total=scores.reduce((a,b)=>a+b,0);let label=total>=18?'Sangat baik — siap diuji coba dengan pemeriksaan akhir.':total>=15?'Baik — lakukan penyempurnaan kecil sebelum diuji coba.':total>=11?'Berkembang — revisi beberapa bagian dengan rubrik.':'Perlu bimbingan — perkuat tujuan, konten, aktivitas, dan akses.';box.innerHTML='<strong>'+total+' / 20</strong><p>'+label+'</p><p class="small muted">Catatan: masalah serius terkait privasi, izin, atau keamanan harus diperbaiki terlepas dari skor total.</p>'}
+const key={q1:'b',q2:'a',q3:'c',q4:'b',q5:'c'};
+const explanations={q1:'Wakelet membantu mengkurasi, mengorganisasi, dan membagikan konten digital.',q2:'Collection adalah kumpulan sumber yang disusun untuk tema atau tujuan tertentu.',q3:'Untuk referensi yang hanya dibaca, gunakan opsi akses lihat jika tersedia.',q4:'Guru tetap bertanggung jawab memeriksa akurasi dan kesesuaian sumber.',q5:'Portofolio dapat menunjukkan karya dan proses belajar dengan tetap menjaga privasi.'};
+function gradeQuiz(){let score=0,answered=0;Object.keys(key).forEach((name,i)=>{const chosen=document.querySelector('input[name="'+name+'"]:checked'),f=document.getElementById('f'+(i+1));f.classList.remove('hide','correct','incorrect');if(chosen){answered++;if(chosen.value===key[name]){score++;f.classList.add('correct');f.textContent='Benar. '+explanations[name]}else{f.classList.add('incorrect');f.textContent='Belum tepat. '+explanations[name]}}else{f.classList.add('incorrect');f.textContent='Belum dijawab. '+explanations[name]}});const r=document.getElementById('quizResult');r.classList.remove('hide');r.innerHTML='<strong>'+score+' / 5</strong><p>'+ (score===5?'Sangat baik! Anda memahami konsep inti.':score>=4?'Bagus! Tinjau kembali jawaban yang belum tepat.':score>=3?'Cukup. Pelajari kembali bagian yang masih membingungkan.':'Pelajari kembali modul, lalu coba kuis sekali lagi.')+'</p><p class="small muted">Jawaban terisi: '+answered+' dari 5.</p>';r.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function resetQuiz(){document.getElementById('quizForm').reset();for(let i=1;i<=5;i++){const f=document.getElementById('f'+i);f.classList.add('hide');f.textContent=''}document.getElementById('quizResult').classList.add('hide')}
+function downloadReflection(){const text=`REFLEKSI PELATIHAN WAKELET\nSebelum pelatihan:\n${val('reflectionBefore')}\n\nSetelah pelatihan:\n${val('reflectionAfter')}\n\nKomitmen tujuh hari:\n${val('commitment')}\n`;downloadText('refleksi-pelatihan-wakelet.txt',text)}
+function finishCourse(){document.getElementById('finishMessage').classList.add('show');document.querySelector('.complete[data-id="5"]').checked=true;updateProgress();document.getElementById('finishMessage').scrollIntoView({behavior:'smooth',block:'nearest'})}
+updateProgress();
+</script>
+</body>
+</html>
